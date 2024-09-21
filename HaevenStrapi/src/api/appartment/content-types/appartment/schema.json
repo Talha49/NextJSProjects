@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "appartments",
+  "info": {
+    "singularName": "appartment",
+    "pluralName": "appartments",
+    "displayName": "Appartment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "text"
+    },
+    "Beds": {
+      "type": "integer"
+    },
+    "Bathroom": {
+      "type": "integer"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "StartTime": {
+      "type": "time"
+    },
+    "EndTime": {
+      "type": "time"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Address": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "appartments"
+    },
+    "bookings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::booking.booking",
+      "mappedBy": "appartment"
+    }
+  }
+}

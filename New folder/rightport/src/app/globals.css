@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.img-animation {
+  animation: slideInFromLeft 1s ease-in-out;
+  animation: bounce 1s infinite;
+}
+
+.button-animation {
+  animation: bounce 1s infinite;
+}
+.scale-in {
+  animation: scaleIn 3s infinite;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card {
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 320px;
+  border-radius: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  
+}
+
+.title span {
+  position: relative;
+  padding: 0.5rem;
+  background-color: #10B981;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+}
+
+.title span svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  height: 1rem;
+}
+
+.title-text {
+  margin-left: 0.5rem;
+  color: #374151;
+  font-size: 12px;
+}
+
+.percent {
+  margin-left: 0.5rem;
+  color: #02972f;
+  font-weight: 600;
+  display: flex;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.data p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #1F2937;
+  font-size: 20px;
+  
+  font-weight: 700;
+  text-align: left;
+}
+
+.data .range {
+  position: relative;
+  background-color: #E5E7EB;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+
+/* styles.css */
+
+.card {
+  position: relative;
+}
+
+.glassmorphism-bg {
+  background-color: rgba(255, 255, 255, 0.15); /* Adjust opacity as needed */
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card:hover .popup {
+  display: block;
+}
+
+.data .range .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #10B981;
+  width: 46%; /* Initial width set to 46% */
+  height: 100%;
+  border-radius: 0.25rem;
+  animation: moveFill 2s infinite alternate; /* Apply animation */
+}
+
+@keyframes moveFill {
+  0% {
+    width: 76%; /* Start width at 76% */
+  }
+  100% {
+    width: 98%; /* End width at 98% */
+  }
+}
+
